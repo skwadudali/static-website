@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fitness calculator</title>
+</head>
+<style>
+ .fitness{
+ text-align: center;
+ font-size: 33px;
+ 
+ }
+  
+.fitness input{background-color: white;
+padding: 10px 10px;}
+{
+    background-color:blue;
+}
+    
+    
+    
+    
+</style>
+<body bgcolor="f#f#f#">
+<h1 style="text-align: center;">calculate your fitness here!!</h1>
+<form name="bf">
+    <div class="fitness">
+your hight(in cm):<input type="text" name="hight" size="12" placeholder=" your hight"><br>
+your weight(in kg):<input type ="text"name="weight" size="10" placeholder="your weight">
+<br>
+<input type="button" value ="calculate BMI" onclick="calculatebmi()"><br>
+your BMI:<input type="text "name="bmi" size="10"><br>
+This mean:<input type="text"name="meaning" size="25"><br>
+<input type="reset" value="reset">    </div>
+
+</form>
+</body>
+<script>function calculatebmi()
+{
+    var weight=document.bf.weight.value
+    var hight=document.bf.hight.value
+    if(weight > 0 && hight > 0)
+    {
+        var finalBMI=weight/(hight/100*hight/100)
+
+        document.bf.bmi.value=finalBMI
+        if (finalBMI < 18.5){
+            document.bf.meaning.value="that you are too thin"
+        }
+        if(finalBMI >18.5 && finalBMI < 25){
+            document.bf.meaning.value="you have over weight"
+
+        }
+    }
+    else{
+        alert("pls fill the form correctly")
+    }
+}
+
+
+
+
+</script>
+</html>
